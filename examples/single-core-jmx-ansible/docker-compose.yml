@@ -1,0 +1,4 @@
+single-core-jdk-jmx-ansible:
+    build: .
+    container_name: "single-core-jdk-with-jmx-ansible"
+    net: "host"

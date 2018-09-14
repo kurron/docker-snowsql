@@ -1,0 +1,4 @@
+single-core-jdk:
+    build: .
+    container_name: "single-core-jdk"
+    net: "host"
