@@ -1,4 +1,0 @@
-single-core-jdk-jmx:
-    build: .
-    container_name: "single-core-jdk-with-jmx"
-    net: "host"

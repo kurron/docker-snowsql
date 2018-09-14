@@ -1,4 +1,0 @@
-multi-core-jdk:
-    build: .
-    container_name: "multi-core-jdk"
-    net: "host"
