@@ -2,11 +2,10 @@
 
 
 
-CMD="docker run --cpus 1 \
-                --interactive \
-                --name zulu-test \
+CMD="docker run --interactive \
+                --name snowsql \
                 --rm \
                 --tty \
-                dockerazuljdk8_azul-jdk:latest"
+                snowsql:latest"
 echo $CMD
 $CMD

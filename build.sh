@@ -1,5 +1,4 @@
 #!/bin/bash
 
-docker pull azul/zulu-openjdk:8
-docker-compose build
-
+docker pull ubuntu:18.04
+docker build --tag snowsql:latest .
