@@ -18,7 +18,7 @@ ENV VERSION 1.1.62
 ENV SNOWSQL_DEST /usr/local/bin
 ENV SNOWSQL_LOGIN_SHELL /home/snowflake/.bashrc
 
-# grab the iinstallation script
+# grab the installation script
 RUN curl -o snowsql-${VERSION}-linux_x86_64.bash http://s3-us-west-2.amazonaws.com/sfc-snowsql-updates/bootstrap/1.1/linux_x86_64/snowsql-${VERSION}-linux_x86_64.bash
 
 # Install the tool
@@ -26,7 +26,10 @@ RUN bash snowsql-${VERSION}-linux_x86_64.bash
 
 # Switch to the non-root user
 USER snowflake
-RUN snowsql --versions
+
+# Run the SnowSQL client once, allowing it to auto-upgrade to the latest version.
+# See https://docs.snowflake.com/en/user-guide/snowsql-install-config.html#label-understanding-auto-upgrades
+RUN snowsql -v
 
 ENTRYPOINT ["snowsql"]
 
